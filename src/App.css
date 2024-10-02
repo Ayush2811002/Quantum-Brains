@@ -1,38 +1,91 @@
-.App {
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
+}
+
+.coming-soon-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 1;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+}
+
+.time-box {
+  margin: 0 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.time {
+  display: block;
+  font-size: 48px;
+  font-weight: bold;
+  color: #FFD700;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.label {
+  font-size: 18px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+footer {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #ddd;
 }
 
-.App-link {
-  color: #61dafb;
+/* Add video background */
+/* Add this CSS to your App.css or in a <style> tag */
+video#background-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* Ensures the video covers the entire area */
+  transform: translate(-50%, -50%); /* Centers the video */
+  z-index: -1; /* Keeps it in the background */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
